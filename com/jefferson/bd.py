@@ -8,6 +8,10 @@ class bancodedados():
         with open('criando_tabela.sql', 'r') as content_file:
             content = content_file.read()
             c.execute(content)
+        
+        with open('copiando_tabela.sql', 'r') as content_file:
+            content = content_file.read()
+            c.execute(content)
 
         c.execute('SELECT * teste WHERE name = '+coluna)
         for row in c.fetchall():

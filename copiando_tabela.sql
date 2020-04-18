@@ -1,0 +1,1 @@
+CREATE TABLE teste as SELECT * FROM pragma_table_info(ac3)
