@@ -1,1 +1,1 @@
-CREATE TABLE teste as SELECT * FROM pragma_table_info(ac3)
+CREATE TABLE teste as SELECT * FROM sqlite_master AS m, pragma_table_info(m.name)
