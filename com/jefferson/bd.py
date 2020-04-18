@@ -1,6 +1,6 @@
 class bancodedados():
 
-    def criando_tabela(self,coluna,campo,valor):
+    def criando_tabela(self):
 
         import sqlite3
         conn = sqlite3.connect(':memory:')
@@ -9,17 +9,14 @@ class bancodedados():
             content = content_file.read()
             c.execute(content)
 
-        c.execute('SELECT * FROM pragma_table_info("ac3") WHERE name = '+coluna)
+        c.execute("INSERT INTO ac3 VALUES (1, 'Jefferson', 'jeffersonwilliam12@hotmail.com')")
+
+        c.execute('''SELECT * FROM ac3''')
+
         for row in c.fetchall():
-           notnull = row[3]
-           pk = row[5]
+            print(row)
 
         conn.commit()
         conn.close()
 
-        if campo == "pk":
-            print (pk == valor)
-            return pk == valor
-        elif campo == "notnull":
-            print (notnull == valor)
-            return notnull == valor
+        return 1
